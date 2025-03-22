@@ -19,5 +19,4 @@ Vagrant.configure("2") do |config|
 
   # Виконуємо shell-скрипт
   config.vm.provision "shell", inline: install_deps
-
   end
