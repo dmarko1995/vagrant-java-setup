@@ -1,0 +1,25 @@
+name: Vagrant VM Setup
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  vagrant-setup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Vagrant and VirtualBox
+      run: |
+        sudo apt update
+        sudo apt install -y vagrant virtualbox
+
+    - name: Initialize Vagrant
+      run: vagrant up
+
+    - name: Run Java App
+      run: |
+        vagrant ssh -c "cd /vagrant && ./gradlew bootRun"
