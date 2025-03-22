@@ -21,4 +21,3 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: install_deps
 
   end
-end
