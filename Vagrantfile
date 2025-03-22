@@ -20,9 +20,5 @@ Vagrant.configure("2") do |config|
   # Виконуємо shell-скрипт
   config.vm.provision "shell", inline: install_deps
 
-  # Тригер для запуску Gradle після підняття віртуальної машини
-  config.vm.provision "trigger" do |trigger|
-    trigger.name = "Start Application"
-    trigger.run = { "inline" => "cd /vagrant && ./gradlew bootRun" }
   end
 end
