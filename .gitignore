@@ -1,0 +1,5 @@
+.gradle/
+build/
+.vagrant/
+*.log
+*.tmp
